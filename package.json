@@ -1,0 +1,13 @@
+{
+  "devDependencies": {
+    "parcel-bundler": "^1.8.1"
+  },
+  "dependencies": {
+    "lodash": "^4.17.10",
+    "rx-lite": "^4.0.8"
+  },
+  "scripts": {
+    "start": "parcel watch src/background.js -o background.js & parcel watch src/content.js -o content.js",
+    "build": "parcel build src/background.js -o background.js & parcel build src/content.js -o content.js"
+  }
+}

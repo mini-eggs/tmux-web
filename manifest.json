@@ -1,0 +1,43 @@
+{
+  "description": "Tmux for Firefox",
+  "manifest_version": 2,
+  "name": "TmuxWeb",
+  "version": "1.0",
+  "homepage_url": "https://evanjon.es/",
+  "icons": {
+    "48": "icons/border-48.png"
+  },
+  "background": {
+    "scripts": ["dist/background.js"]
+  },
+  "page_action": {
+    "default_icon": "icons/border-48.png",
+    "browser_style": true
+  },
+  "permissions": [
+    "tabs",
+    "bookmarks",
+    "history",
+    "clipboardRead",
+    "clipboardWrite",
+    "storage",
+    "sessions",
+    "notifications",
+    "webNavigation",
+    "<all_urls>"
+  ],
+  "content_scripts": [
+    {
+      "run_at": "document_start",
+      "matches": ["<all_urls>"],
+      "js": ["dist/content.js"],
+      "all_frames": true,
+      "match_about_blank": true
+    }
+  ],
+  "applications": {
+    "gecko": {
+      "id": "mux-web@evanjon.es"
+    }
+  }
+}
